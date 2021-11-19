@@ -39,14 +39,15 @@ yii migrate
 yii seed-user-data
 ~~~
 **NOTES:**
+- Test user will be created with next credentials: username: admin, password:admin
 - If you want to set custom passwords to the users, create config file user_passwords.php in base config folder.
 With 'user_id' => 'password' array, sample:
 ```php
 return [
     'userPasswords' => [
-        1 => 'test_pass',
-        2 => 'sad pass',
-        5 => 'root_pass'
+        2 => 'test_pass',
+        5 => 'sad pass',
+        7 => 'root_pass'
     ]
 ];
 ```
@@ -71,7 +72,10 @@ http://your_domain/web/api/albums
 
 **NOTES:**
 - If you want to get response with pagination, simply add page and per-page params to url, example:
-  http://your_domain/web/api/albums?page=3&per-page=2
+~~~
+http://your_domain/web/api/albums?page=3&per-page=2
+~~~
+  
 
 Tests
 ------------
