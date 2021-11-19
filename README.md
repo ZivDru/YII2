@@ -71,7 +71,10 @@ http://your_domain/web/api/albums
 
 **NOTES:**
 - If you want to get response with pagination, simply add page and per-page params to url, example:
-  http://your_domain/web/api/albums?page=3&per-page=2
+~~~
+http://your_domain/web/api/albums?page=3&per-page=2
+~~~
+  
 
 Tests
 ------------
