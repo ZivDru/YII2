@@ -18,6 +18,10 @@ class SeedUserDataController extends Controller
             $faker = FakerFactory::create();
 
             for ($i = 1; $i <= 11; $i++) {
+                if($i === 1 && !empty(User::findByUsername('admin'))) {
+                    continue;
+                }
+
                 // Create user
                 $user = new User();
                 $user->username = $i === 1 ? 'admin' : $faker->unique()->username;
@@ -35,7 +39,7 @@ class SeedUserDataController extends Controller
                 for ($s = 1; $s <= 10; $s++) {
                     $album = new Album();
                     $album->title = $faker->title;
-                    $album->user_id = $user->id;
+                    $album->user_id = $user->getId();
                     $album->save();
 
                     // Create photo for album
